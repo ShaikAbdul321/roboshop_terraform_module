@@ -74,7 +74,7 @@ resource "null_resource" "null" {
 ################# creating dns records #################
 resource "aws_route53_record" "www" {
   zone_id = "Z08631072FSVS0GDIGH1F"
-  name    = "${var.component}.${var.env}"
+  name    = "${var.component}-${var.env}"
   type    = "A"
   ttl     = 30
   records = [aws_instance.web.private_ip]
